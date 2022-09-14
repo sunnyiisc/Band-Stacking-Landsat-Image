@@ -14,16 +14,16 @@ from tkinter import filedialog
 
 ...
 
-def browse_folder():
+def browse_folder(title_details):
     directory = filedialog.askdirectory(initialdir = '/',
-                                        title = 'Select the Path Folder'
+                                        title = title_details
                                        )
     return directory
 
 
-def browse_file():
+def browse_file(title_details):
     filename = filedialog.askopenfilename(initialdir = '/',
-                                          title = 'Select the File',
+                                          title = title_details,
                                           filetypes = (('all files','*.*'), ('text files', '*.txt*'))
                                          )
     return filename

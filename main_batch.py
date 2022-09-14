@@ -17,9 +17,9 @@ from stack_band_function import *
 
 ...
 #path = input('Enter the complete Path of the Folder (Working Dir & Products stored) (with slash at end): ') #'/home/nrsc/Documents/DATA_Products/2022_05_26_L9_OLI_monthly_dec21_may22/'
-path = browse_gui.browse_folder()
+path = browse_gui.browse_folder('Folder where all the product folders are stored')
 #path_save = input('Enter the Complete Path of the Folder where you want to save (with slash at end): ')
-path_save = browse_gui.browse_folder()
+path_save = browse_gui.browse_folder('Folder where the stacked images to be saved')
 
 folder_path = glob.glob(path+'/**/')
 #folder_path = glob.glob(path)
