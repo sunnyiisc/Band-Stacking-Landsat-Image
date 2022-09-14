@@ -17,7 +17,9 @@ import glob
 def stack_band(path, folder_path, num_bands_start, num_bands_end):
     # Specifying list of tif files to be stacked
 
-    path_tif = sorted(glob.glob(folder_path + '*_B['+num_bands_start+'-'+num_bands_end+'].TIF')) + glob.glob(folder_path + '*_SZA.TIF')
+    path_tif = sorted(glob.glob(folder_path + '*_B['+num_bands_start+'-'+num_bands_end+'].TIF')) \
+               + glob.glob(folder_path + '*_ZA.TIF') \
+               + glob.glob(folder_path + '*_AA.TIF')
 
     print('List of Band TIFs to be Merged:')
     print(*path_tif, sep='\n')
