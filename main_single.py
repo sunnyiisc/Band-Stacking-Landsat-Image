@@ -2,7 +2,8 @@
 Created on 02 Jun, 2022 at 15:29
     Title: main.py - Band Stacking
     Description:
-        -   Stacking all the bands that are available in the path provided and make a single TIF file
+        -   Stacking all the bands that are available in the product folder provided and make a single TIF file
+        -   Start and End bands can be selected
 @author: Supantha Sen, sunnymac, IISc Bangalore
 """
 
@@ -13,7 +14,7 @@ import glob
 
 
 def stack_band(path):
-    file_name = input('Enter Product Folder (with slash at end): ')  # 'LC09_L2SP_146041_20220514_20220516_02_T1/'
+    file_name = input('Enter Product Folder (with slash at end): ')  # 'LC09_L2SP_146041_20220514_20220516_02_T1'
     num_bands = input('Enter the total number of bands you want to merge: ')
 
     # Specifying list of tif files to be stacked
@@ -30,7 +31,7 @@ def stack_band(path):
     meta.update(count=len(path_tif))
 
     # Naming the Stacked Image File
-    stacked_img_name = path + file_name[:-1] + '_stacked.TIF'
+    stacked_img_name = path + file_name[:-1] + '_' + 'stacked.TIF'
 
     # Reading each layer and writing it into a stack
     stack_img = rasterio.open(stacked_img_name, 'w', **meta)
@@ -42,7 +43,6 @@ def stack_band(path):
 
     print('Stacked TIF path: ', stacked_img_name)
     print(layer, 'Bands Stacking Completed.')
-
 
 
 path = input('Enter the complete Path of the Folder (Working Dir & Products stored) (with slash at end): ')

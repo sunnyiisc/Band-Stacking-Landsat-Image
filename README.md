@@ -25,12 +25,23 @@ Stacking the Bands of Landsat Multi-Spectral Image to create a single TIF file
     ├── Prod3_Folder
 ```
 
-- Enter the folder path with slash at the end like
-```bash
-    '/home/${USER}/Documents/Prod_Folder/'
-```
-- Enter the folder path where you want to save the stacked images '/home/${USER}/Documents/Save_Folder/
-- Enter the start and last band number, if 1 and 3 are selected respectively then Band1, Band2 and Band3 will be stacked.
+- Select the folder path where all the products are saved 'Prod_Folder' from the gui as follows:
+
+**Image
+
+- Select the folder path where you want to save the stacked images from the gui as follows:
+
+**Image
+
+- Enter the start and last band number, if 1 and 3 are selected respectively then Band1, Band2 and Band3 will be stacked. Followed by the angles as follows:
+  - BAND1
+  - BAND2
+  - BAND3
+  - SZA
+  - VZA
+  - SAA
+  - VAA
+  
 - The stacked image will be saved as 
 ```bash
     '/home/${USER}/Documents/Save_Folder/LC09_L2SP_146041_20220514_20220516_02_T1_stacked.TIF'
