@@ -14,12 +14,14 @@ import glob
 import browse_gui
 from stack_band_function import *
 
-
+...
+#path = input('Enter the complete Path of the Folder (Working Dir & Products stored) (with slash at end): ') #'/home/nrsc/Documents/DATA_Products/2022_05_26_L9_OLI_monthly_dec21_may22/'
 path = browse_gui.browse_folder('Folder containing all the Image folders')
+#path_save = input('Enter the Complete Path of the Folder where you want to save (with slash at end): ')
 path_save = browse_gui.browse_folder('Folder to save the stacked image')
 
 folder_path = glob.glob(path+'/**/')
-
+#folder_path = glob.glob(path)
 print('List of products to be stacked:')
 print(*folder_path, sep='\n')
 

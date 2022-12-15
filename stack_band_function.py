@@ -1,9 +1,9 @@
 """
 Created on 30 Aug, 2022 at 12:49
-    Title: stack_band_function.py - Band Stacking
+    Title: stack_band_function.py - Function to stack the bands
     Description:
         -   Stack the bands in a selected folder to a single TIF file
-        -   Start and end bands are specified followed by SZA, VZA, SAA, VAA
+        -   Start and end bands are specified followed by SAA, VAA, SZA, VZA
 @author: Supantha Sen, sunnymac, IISc Bangalore
 """
 
@@ -14,8 +14,13 @@ import glob
 
 def stack_band(path, folder_path, num_bands_start, num_bands_end):
     # Specifying list of tif files to be stacked
-
-    path_tif = sorted(glob.glob(folder_path + '*B['+num_bands_start+'-'+num_bands_end+'].TIF')) + sorted(glob.glob(folder_path + '*ZA.TIF')) + sorted(glob.glob(folder_path + '*AA.TIF'))
+    if int(num_bands_end) < 10:
+        path_tif = sorted(glob.glob(folder_path + '*B['+num_bands_start+'-'+num_bands_end+'].TIF')) + \
+                   sorted(glob.glob(folder_path + '*A.TIF'))
+    elif int(num_bands_end) >= 10:
+        path_tif = sorted(glob.glob(folder_path + '*B[' + num_bands_start + '-9].TIF')) + \
+                   sorted(glob.glob(folder_path + '*B1[0-' + num_bands_end[1] + '].TIF')) + \
+                   sorted(glob.glob(folder_path + '*A.TIF'))
 
     print('List of Band TIFs to be Merged:')
     print(*path_tif, sep='\n')

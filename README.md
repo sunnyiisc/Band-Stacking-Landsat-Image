@@ -37,10 +37,10 @@ Stacking the Bands of Landsat Multi-Spectral Image to create a single TIF file
   - BAND1
   - BAND2
   - BAND3
-  - SZA
-  - VZA
   - SAA
   - VAA
+  - SZA
+  - VZA
   
 - The stacked image will be saved as 
 ```bash
